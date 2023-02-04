@@ -37,7 +37,7 @@ document.querySelector('.grid-box').innerHTML = modalData
 
 const displayModal = (data) => {
   const modalSection = document.querySelector('.modal');
-  modalSection.innerHTML = `
+  modalSection.innerHTML = 
   <div class="overlay overlay-hid"></div>
   <div class="modal-hid__content">
     <div class="modal-hid__content__upper">
@@ -100,13 +100,13 @@ const displayModal = (data) => {
     modal.style.display = 'none';
   };
 
-  overlay.addEventListener('click', closeModal);
+  overlay.addEventListener('submit', closeModal);
 };
 
 const projectButtons = document.querySelectorAll('.sm-btn');
 projectButtons.forEach((projectButton) => {
   projectButton.addEventListener('click', (f) => {
-    const index = f.target.id.split('_')[1];
+    const index = f.target.id.split('')[1];
     displayModal(modalData[index]);
   });
 });
